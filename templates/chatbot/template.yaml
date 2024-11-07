@@ -3,7 +3,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: chatbot
-  title: Chatbot Application
+  title: MK Chatbot Application
   description: Build your own Large Language Model (LLM)-enabled chat application. Pick from the model servers available or bring your own.
   tags: ["ai", "llamacpp", "vllm", "python"]
   annotations:
@@ -263,12 +263,12 @@ spec:
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.githubServer }}?owner=${{ parameters.repoOwner }}&repo=${{ parameters.repoName }}
         defaultBranch: ${{ parameters.branch }}
-        protectDefaultBranch: true
-        allowAutoMerge: true
-        deleteBranchOnMerge: true
-        requiredStatusCheckContexts: []
+        protectDefaultBranch: false
+        # allowAutoMerge: true
+        # deleteBranchOnMerge: true
+        # requiredStatusCheckContexts: []
         repoVisibility: "public"
-        requiredApprovingReviewCount: 0
+        # requiredApprovingReviewCount: 0
     # This action creates a new GitLab repository and publishes the files in the workspace directory to the repository.
     - id: publish-gitlab
       name: Publish Repository to GitLab
